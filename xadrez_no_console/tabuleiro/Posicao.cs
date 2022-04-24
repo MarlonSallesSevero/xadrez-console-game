@@ -1,5 +1,4 @@
-﻿
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     internal class Posicao
     {
@@ -9,6 +8,11 @@ namespace tabuleiro
         {
             this.linha = linha;
             this.coluna = coluna;
+        }
+
+        public override string ToString()
+        {
+            return $"{linha}x{coluna}";
         }
     }
 }
