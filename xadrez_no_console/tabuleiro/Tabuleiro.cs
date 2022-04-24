@@ -18,11 +18,40 @@
             return pecas[linhas, colunas];
         }
 
+        public Peca peca(Posicao pos)
+        {
+            return pecas[pos.linha, pos.coluna];
+        }
+
+        public bool ExistPecas(Posicao pos)
+        {
+            PosValida(pos);
+            return peca(pos) != null;
+        }
+
         public void PutPecas(Peca pec, Posicao pos)
         {
+            if (ExistPecas(pos))
+            {
+                throw new TabException("Já Existe uma peça nessa posição!");
+            }
             pecas[pos.linha, pos.coluna] = pec;
             pec.posicao = pos;
         }
-
+        public bool ValidaPos(Posicao pos)
+        {
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
+            {
+                return false;
+            }
+            return true;
+        }
+        public void PosValida(Posicao pos)
+        {
+            if (!ValidaPos(pos))
+            {
+                throw new TabException("Posição Invalida!");
+            }
+        }
     }
 }
