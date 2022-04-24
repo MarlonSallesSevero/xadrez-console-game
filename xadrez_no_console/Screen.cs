@@ -41,7 +41,6 @@ namespace xadrez_no_console
                 Console.ForegroundColor = aux;
             }
         }
-
         public static PosicaoXadrez ReadPosicao()
         {
             string s = Console.ReadLine();
