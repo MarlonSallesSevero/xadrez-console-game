@@ -1,6 +1,6 @@
 ﻿using System;
 using tabuleiro;
-
+using xadrez;
 namespace xadrez_no_console
 {
     internal class Program
@@ -9,10 +9,11 @@ namespace xadrez_no_console
         {
 
             Tabuleiro tab = new Tabuleiro(8, 8);
-
+            
+            tab.PutPecas(new Torre(tab, Cor.Azul), new Posicao(0,0));
             Screen.PrinTab(tab);
-            Console.WriteLine();
-            string a = Console.ReadLine();
+
+            string stop = Console.ReadLine();
         }
     }
 }
