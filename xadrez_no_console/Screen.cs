@@ -1,6 +1,6 @@
 ﻿using System;
 using tabuleiro;
-
+using xadrez;
 namespace xadrez_no_console
 {
     internal class Screen
@@ -40,6 +40,14 @@ namespace xadrez_no_console
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static PosicaoXadrez ReadPosicao()
+        {
+            string s = Console.ReadLine();
+            char chCollu= s[0];
+            int intLine = int.Parse(s[1] + "");
+            return new PosicaoXadrez(chCollu, intLine);
         }
     }
 }
