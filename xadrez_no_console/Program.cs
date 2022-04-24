@@ -28,6 +28,10 @@ namespace xadrez_no_console
             {
                 Console.WriteLine(ex.Message);
             }
+            finally
+            {
+                string a = Console.ReadLine();
+            }
         }
     }
 }
