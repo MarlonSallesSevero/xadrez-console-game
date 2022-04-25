@@ -27,24 +27,25 @@ namespace xadrez
         private void ColocarPecasXadrez()
         {
             //PECAS 01
-            tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('a', 2).ToPosicao());
+            /*tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('a', 2).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('b', 2).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('c', 2).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('d', 2).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('e', 2).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('f', 2).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('g', 2).ToPosicao());
-            tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('h', 2).ToPosicao());
+            tab.PutPecas(new Peao(tab, Cor.Branca), new PosicaoXadrez('h', 2).ToPosicao());*/
             tab.PutPecas(new Torre(tab, Cor.Branca), new PosicaoXadrez('a', 1).ToPosicao());
-            tab.PutPecas(new Cavalo(tab, Cor.Branca), new PosicaoXadrez('b', 1).ToPosicao());
-            tab.PutPecas(new Bispo(tab, Cor.Branca), new PosicaoXadrez('c', 1).ToPosicao());
             tab.PutPecas(new Rei(tab, Cor.Branca), new PosicaoXadrez('d', 1).ToPosicao());
+            /*tab.PutPecas(new Cavalo(tab, Cor.Branca), new PosicaoXadrez('b', 1).ToPosicao());
+            tab.PutPecas(new Bispo(tab, Cor.Branca), new PosicaoXadrez('c', 1).ToPosicao());
+            //tab.PutPecas(new Rei(tab, Cor.Branca), new PosicaoXadrez('d', 1).ToPosicao());
             tab.PutPecas(new Rainha(tab, Cor.Branca), new PosicaoXadrez('e', 1).ToPosicao());
             tab.PutPecas(new Bispo(tab, Cor.Branca), new PosicaoXadrez('f', 1).ToPosicao());
             tab.PutPecas(new Cavalo(tab, Cor.Branca), new PosicaoXadrez('g', 1).ToPosicao());
-            tab.PutPecas(new Torre(tab, Cor.Branca), new PosicaoXadrez('h', 1).ToPosicao());
+            tab.PutPecas(new Torre(tab, Cor.Branca), new PosicaoXadrez('h', 1).ToPosicao());*/
             //PECAS 02
-            tab.PutPecas(new Peao(tab, Cor.Preto), new PosicaoXadrez('a', 7).ToPosicao());
+           /* tab.PutPecas(new Peao(tab, Cor.Preto), new PosicaoXadrez('a', 7).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Preto), new PosicaoXadrez('b', 7).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Preto), new PosicaoXadrez('c', 7).ToPosicao());
             tab.PutPecas(new Peao(tab, Cor.Preto), new PosicaoXadrez('d', 7).ToPosicao());
@@ -59,7 +60,7 @@ namespace xadrez
             tab.PutPecas(new Rainha(tab, Cor.Preto), new PosicaoXadrez('e', 8).ToPosicao());
             tab.PutPecas(new Bispo(tab, Cor.Preto), new PosicaoXadrez('f', 8).ToPosicao());
             tab.PutPecas(new Cavalo(tab, Cor.Preto), new PosicaoXadrez('g', 8).ToPosicao());
-            tab.PutPecas(new Torre(tab, Cor.Preto), new PosicaoXadrez('h', 8).ToPosicao());
+            tab.PutPecas(new Torre(tab, Cor.Preto), new PosicaoXadrez('h', 8).ToPosicao());*/
         }
     }
 }
