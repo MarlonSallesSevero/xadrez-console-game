@@ -68,7 +68,7 @@ namespace xadrez
             Peca p = tab.peca(pos);
             return p == null || p.cor != this.cor;
         }
-
+         
         public override string ToString()
         {
             return "R";

@@ -6,8 +6,8 @@ namespace xadrez
     internal class PartidaXadrez
     {
         public Tabuleiro tab { get; private set; }
-        private int turno { get; set; }
-        private Cor atualPlayer { get; set; }
+        public int turno { get; private set; }
+        public Cor atualPlayer { get; private set; }
         public bool finished { get; private set; }
         public PartidaXadrez()
         {
@@ -24,6 +24,44 @@ namespace xadrez
             Peca pecaCapturada = tab.RemovePeca(destiny);
             tab.PutPecas(p, destiny);
         }
+        
+        public void RealizaJogada(Posicao origem, Posicao destino)
+        {
+            ExeMov(origem, destino);
+            turno++;
+            mudaPlayer();
+        }
+
+        private void mudaPlayer()
+        {
+            if(atualPlayer == Cor.Branca)
+            {
+                atualPlayer = Cor.Preto;
+            }
+            else
+            {
+                atualPlayer = Cor.Branca;
+            }
+        }
+
+        public void ValidarPosOrigem(Posicao origem)
+        {
+            if(tab.peca(origem) == null)
+            {
+                throw new TabException("Nao existe peça na posição de origem escolhida!");
+            }
+
+            if (atualPlayer != tab.peca(origem).cor)
+            {
+                throw new TabException("A peça de origem escolhida não é sua!");
+            }
+
+            if (!tab.peca(origem).ExistMovPossiveis())
+            {
+                throw new TabException("Não existe movimentos possiveis!");
+            }
+        }
+        
         private void ColocarPecasXadrez()
         {
             //PECAS 01
@@ -60,7 +98,7 @@ namespace xadrez
             tab.PutPecas(new Rainha(tab, Cor.Preto), new PosicaoXadrez('e', 8).ToPosicao());
             tab.PutPecas(new Bispo(tab, Cor.Preto), new PosicaoXadrez('f', 8).ToPosicao());
             tab.PutPecas(new Cavalo(tab, Cor.Preto), new PosicaoXadrez('g', 8).ToPosicao());
-            tab.PutPecas(new Torre(tab, Cor.Preto), new PosicaoXadrez('h', 8).ToPosicao());*/
+            tab.PutPecas(new Torre(tab, Cor.Preto), new PosicaoXadrez('h', 8).ToPosicao());*/        
         }
     }
 }

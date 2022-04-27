@@ -10,7 +10,7 @@ namespace xadrez
 
         public override bool[,] movPossiveis()
         {
-            throw new System.NotImplementedException();
+            throw new TabException("Peça Invalida");
         }
 
         public override string ToString()

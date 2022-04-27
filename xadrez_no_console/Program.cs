@@ -7,31 +7,41 @@ namespace xadrez_no_console
     {
         static void Main(string[] args)
         {
-            try
+
+            PartidaXadrez partida = new PartidaXadrez();
+            while (!partida.finished)
             {
-                PartidaXadrez partida = new PartidaXadrez();
-                Screen.PrinTab(partida.tab);
-                while (partida.finished != true)
+                try
                 {
                     Console.Clear();
                     Screen.PrinTab(partida.tab);
                     Console.WriteLine();
+                    Console.WriteLine($"Turno : {partida.turno}");
+                    Console.WriteLine($"Aguardando Jogada : {partida.atualPlayer}");
+                    Console.WriteLine();
+                    
                     Console.Write("Origin: ");
                     Posicao orig = Screen.ReadPosicao().ToPosicao();
+                    partida.ValidarPosOrigem(orig); 
+                    bool[,] posPossiveis = partida.tab.peca(orig).movPossiveis();
+                    
+                    Console.Clear();
+                    Screen.PrinTabPossiveis(partida.tab, posPossiveis);
+                    
                     Console.Write("Destiny: ");
                     Posicao destiny = Screen.ReadPosicao().ToPosicao();
+                    
                     partida.ExeMov(orig, destiny);
+                }catch (TabException ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
-                string stop = Console.ReadLine();
-            }
-            catch (TabException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                string a = Console.ReadLine();
+                finally
+                {
+                    string a = Console.ReadLine();
+                }
             }
         }
     }
 }
+ 
