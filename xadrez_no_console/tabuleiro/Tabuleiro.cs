@@ -5,7 +5,6 @@
         public int linhas { get; set; }
         public int colunas { get; set; }
         private Peca[,] pecas { get; set; }
-
         public Tabuleiro(int linhas, int colunas)
         {
             this.linhas = linhas;

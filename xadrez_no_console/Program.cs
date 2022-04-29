@@ -1,6 +1,7 @@
 ﻿using System;
 using tabuleiro;
 using xadrez;
+
 namespace xadrez_no_console
 {
     internal class Program
