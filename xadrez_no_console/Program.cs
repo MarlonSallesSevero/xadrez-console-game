@@ -30,7 +30,7 @@ namespace xadrez_no_console
                     
                     Console.Write("Destiny: ");
                     Posicao destiny = Screen.ReadPosicao().ToPosicao();
-                    
+                    partida.ValidaPosDestino(orig, destiny); 
                     partida.ExeMov(orig, destiny);
                 }catch (TabException ex)
                 {

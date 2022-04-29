@@ -61,6 +61,14 @@ namespace xadrez
                 throw new TabException("Não existe movimentos possiveis!");
             }
         }
+
+        public void ValidaPosDestino(Posicao origem, Posicao destino)
+        {
+            if (!tab.peca(origem).CanMoveTo(destino))
+            {
+                throw new TabException("Posicao de destino invalida!");
+            }
+        }
         
         private void ColocarPecasXadrez()
         {

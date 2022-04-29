@@ -30,6 +30,12 @@
             }
             return false;
         }
+
+
+        public bool CanMoveTo(Posicao pos)
+        {
+            return movPossiveis()[pos.linha, pos.coluna];
+        }
         public abstract bool[,] movPossiveis();
         
         public void incremQtdMov()
