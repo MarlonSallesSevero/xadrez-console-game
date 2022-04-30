@@ -1,10 +1,39 @@
 ﻿using System;
 using tabuleiro;
 using xadrez;
+using System.Collections.Generic;
 namespace xadrez_no_console
 {
     internal class Screen
     {
+        public static void PrintPartida(PartidaXadrez partida)
+        {
+            PrinTab(partida.tab);
+            Console.WriteLine();
+            PrintPecasCap(partida);
+            Console.WriteLine();
+            Console.WriteLine($"Turno : {partida.turno}");
+            Console.WriteLine($"Aguardando Jogada : {partida.atualPlayer}");
+        }
+        public static void PrintPecasCap(PartidaXadrez partida)
+        {
+            Console.WriteLine("*Peças Capturadas*");
+            Console.Write("Brancas:");
+            PrintSet(partida.PecasCapturdas(Cor.Branca));
+            Console.WriteLine();
+            Console.Write("Pretas:");
+            PrintSet(partida.PecasCapturdas(Cor.Preto));
+        }
+        public static void PrintSet(HashSet<Peca> set)
+        {
+            Console.Write("[");
+            foreach (Peca item in set)
+            {
+                Console.Write(item + " ");
+            }
+            Console.Write("]");
+
+        }
         public static void PrinTab(Tabuleiro tab)
         {
             for (int i = 0; i < tab.linhas; i++)
